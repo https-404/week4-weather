@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Basic HTML/Tailwind starter</title>
-    <meta name="description" content="Basic HTML/Tailwind starter" />
-    <meta name="author" content="Daily Dev Tips" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="w-screen h-screen bg-daily-dev-tips flex items-center justify-center text-white">Welcome to initial Starter kit by Areesh</div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-600 flex items-center justify-center h-[1000px] m-0 transition-colors duration-300" id="app-body">
+  <div id="weather-container" class="bg-white/20 w-[400px] p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white/20 text-center">
+    
+    <h2 class="text-white text-2xl font-semibold mb-4">Weather App</h2>
+
+    <!-- Search -->
+    <input type="text" id="city" placeholder="Enter city"
+      class="w-full p-2 rounded-lg border border-white mt-3 text-black" />
+    <button onclick="getWeather()"
+      class="bg-purple-400 text-white px-4 py-2 rounded-lg mt-4 w-full hover:bg-purple-700 transition">
+      Search
+    </button>
+
+    <!-- Toggle buttons -->
+    <div class="flex justify-between mt-4">
+      <button id="unit-toggle" 
+        class="bg-white/20 text-white px-3 py-1 rounded-lg">
+        Switch to °F
+      </button>
+      <button id="theme-toggle" 
+        class="bg-white/20 text-white px-3 py-1 rounded-lg">
+        Toggle Theme
+      </button>
+    </div>
+
+    <!-- Weather Icon -->
+    <img id="weather-icon" alt="Weather Icon"
+      class="w-40 h-40 mx-auto mt-4 hidden" />
+
+    <!-- Temperature -->
+    <div id="temp-div" class="text-white text-6xl font-bold mt-2"></div>
+
+    <!-- Weather Info -->
+    <div id="weather-info" class="text-white text-lg mt-2"></div>
+
+    <!-- Error and Loading -->
+    <p id="loading" class="text-white mt-3 hidden">Loading...</p>
+    <p id="error-message" class="text-red-400 mt-3 hidden"></p>
+
+    <!-- 7-Day Forecast -->
+    <h3 class="text-white text-xl mt-6">Forecast</h3>
+    <div id="daily-forecast" class="mt-4 grid grid-cols-2 gap-4 text-white"></div>
+
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
 </html>
