@@ -2,7 +2,7 @@
   "name": "html-tailwind-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.ts",
   "watch": {
     "build": {
       "patterns": [
@@ -16,6 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "postcss styles.css -o src/styles.css",
     "dev": "concurrently \"npm run build && live-server src --port=8080\" \"npm run watch\""
+    
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,9 @@
   },
   "devDependencies": {
     "concurrently": "^7.2.2",
-    "npm-watch": "^0.11.0"
+    "npm-watch": "^0.11.0",
+     "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "http-server": "^14.1.1"
   }
 }
