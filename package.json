@@ -3,20 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "watch": {
-    "build": {
-      "patterns": [
-        "src"
-      ],
-      "extensions": "html"
-    }
-  },
+ 
   "scripts": {
-    "watch": "npm-watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss styles.css -o src/styles.css",
-    "dev": "concurrently \"npm run build && live-server src --port=8080\" \"npm run watch\""
-  },
+  "build:css": "postcss styles.css -o src/styles.css",
+  "build:ts": "tsc",
+  "build": "npm run build:css && npm run build:ts",
+  "dev": "concurrently \"npm run build:css -- --watch\" \"tsc --watch\" \"live-server src --port=8080\""
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -27,6 +21,7 @@
   },
   "devDependencies": {
     "concurrently": "^7.2.2",
-    "npm-watch": "^0.11.0"
+    "npm-watch": "^0.11.0",
+    "typescript": "^5.9.2"
   }
 }

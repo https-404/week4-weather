@@ -1,14 +1,12 @@
 module.exports = {
-  content: ["./src/*.html"],
+  content: ["./src/**/*.html", "./src/**/*.ts"],
+  darkMode: "class", 
   theme: {
     extend: {
       colors: {
-        'daily-dev-tips': "#F89283"
-      }
+        "daily-dev-tips": "#F89283",
+      },
     },
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
-}
+};
